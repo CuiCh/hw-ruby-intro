@@ -41,14 +41,6 @@ def sum_to_n? arr, n
   end
   return false
   
-  # for i in 0..(arr.lenght-1)
-  #   for j in (i+1)..(arr.lenght-1)
-  #     if arr[i]+arr[j] == n
-  #       return true
-  #     end
-  #   end
-  # end
-  # return false
 end
 
 # Part 2
@@ -105,8 +97,7 @@ class BookInStock
   def price_as_string
     return "$" + format('%.2f',@price)
   end
-  
-  
     
 end
+
 
