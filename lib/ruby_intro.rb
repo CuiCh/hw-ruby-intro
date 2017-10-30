@@ -5,26 +5,30 @@
 def sum arr
   # YOUR CODE HERE
   # 空集合则返回默认值0
-  sum = 0
-  arr.each do |i|
-    sum+=i
-  end
-  sum
+  # sum = 0
+  # arr.each do |i|
+  #   sum+=i
+  # end
+  # sum
+  arr.reduce 0,:+
 end
 
 def max_2_sum arr
   # YOUR CODE HERE
   # 数组为空则返回0
-  if arr.size == 0
-    return 0
-  end
+  # if arr.size == 0
+  #   return 0
+  # end
   
-  if arr.size == 1
-    return arr[0]
-  else
-    arr.sort!
-    return arr[-1] + arr[-2]
-  end
+  # if arr.size == 1
+  #   return arr[0]
+  # else
+  #   arr.sort!
+  #   return arr[-1] + arr[-2]
+  # end
+  
+  sum(arr.sort.last(2))
+  
 end
 
 def sum_to_n? arr, n
@@ -84,8 +88,7 @@ end
 class BookInStock
   # 检查参数的输入
   def initialize(isbn, price)
-    raise ArgumentError if isbn==""
-    raise ArgumentError if price<=0
+    raise ArgumentError if isbn.empty?|| price<=0
     @isbn = isbn
     @price = price
   end
@@ -95,7 +98,7 @@ class BookInStock
   attr_accessor :price
   
   def price_as_string
-    return "$" + format('%.2f',@price)
+    return format('$%.2f',@price)
   end
     
 end
